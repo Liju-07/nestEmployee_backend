@@ -20,7 +20,7 @@ public class LeaveController {
     private LeaveDao leaveDao;
 
 
-    //Add leave applications in employee
+
     @CrossOrigin("*")
     @PostMapping("/applyLeave")
     public String applyLeave(@RequestBody LeaveModel model){
@@ -41,7 +41,7 @@ public class LeaveController {
         return "Success'";
     }
 
-    //View All leaves in admin
+
     @CrossOrigin("*")
     @GetMapping("/viewAllLeaves")
     public List<Map<String,String>> viewAllLeaves(){
