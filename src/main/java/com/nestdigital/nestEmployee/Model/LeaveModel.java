@@ -13,11 +13,11 @@ public class LeaveModel {
     private int id;
 
     private String type;
-    private int emp_id;
+    private int empid;
     private String description;
     private String applyDate;
     private String leaveDate;
-    private int Status;
+    private int status;
 
     public int getId() {
         return id;
@@ -35,12 +35,12 @@ public class LeaveModel {
         this.type = type;
     }
 
-    public int getEmp_id() {
-        return emp_id;
+    public int getEmpid() {
+        return empid;
     }
 
-    public void setEmp_id(int emp_id) {
-        this.emp_id = emp_id;
+    public void setEmpid(int empid) {
+        this.empid = empid;
     }
 
     public String getDescription() {
@@ -68,23 +68,23 @@ public class LeaveModel {
     }
 
     public int getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(int status) {
-        Status = status;
+        this.status = status;
     }
 
     public LeaveModel() {
     }
 
-    public LeaveModel(int id, String type, int emp_id, String description, String applyDate, String leaveDate, int status) {
+    public LeaveModel(int id, String type, int empid, String description, String applyDate, String leaveDate, int status) {
         this.id = id;
         this.type = type;
-        this.emp_id = emp_id;
+        this.empid = empid;
         this.description = description;
         this.applyDate = applyDate;
         this.leaveDate = leaveDate;
-        Status = status;
+        this.status = status;
     }
 }

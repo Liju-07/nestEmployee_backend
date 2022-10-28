@@ -19,7 +19,7 @@ public class LogController {
     private LogDao logDao;
 
 
-    //When employee is logged in
+
     @CrossOrigin(origins = "*")
     @PostMapping("/checkIn")
     public String addLogDetails(@RequestBody LogModel logModel){
@@ -30,7 +30,7 @@ public class LogController {
         return "Success";
     }
 
-    //When employee sign-out
+
     @Transactional
     @CrossOrigin(origins = "*")
     @PostMapping("/checkOut")
@@ -43,14 +43,14 @@ public class LogController {
     }
 
 
-    //View all employee logs
+
     @CrossOrigin(origins = "*")
     @GetMapping("/viewAllLog")
     public List<Map<String,String>> viewAllLog(){
         return (List<Map<String, String>>) logDao.viewAllLogs();
     }
 
-    //view log of a particular employee (by emp_id)
+
     @CrossOrigin(origins = "*")
     @PostMapping("/viewLogById")
     public List<Map<String,String>> viewLogById(@RequestBody LogModel logModel){

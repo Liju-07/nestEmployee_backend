@@ -22,7 +22,7 @@ public class LeaveController {
 
 
     @CrossOrigin("*")
-    @PostMapping("/applyLeave")
+    @PostMapping(path ="/leaveapply",consumes = "application/json",produces = "application/json")
     public String applyLeave(@RequestBody LeaveModel model){
         DateTimeFormatter date = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
@@ -53,7 +53,7 @@ public class LeaveController {
     @CrossOrigin("*")
     @PostMapping("/viewLeaveById")
     public List<Map<String,String>> viewLeaveById(@RequestBody LeaveModel model){
-        return (List<Map<String, String>>) leaveDao.viewLeaveByEmpID(model.getEmp_id());
+        return (List<Map<String, String>>) leaveDao.viewLeaveByEmpID(model.getEmpid());
     }
 
 }
