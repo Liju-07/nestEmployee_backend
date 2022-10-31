@@ -49,6 +49,13 @@ public class LeaveController {
     }
 
 
+    @CrossOrigin(origins = "*")
+    @PostMapping(path ="/leavestatus",consumes = "application/json",produces = "application/json" )
+    public List<Map<String,String>> leavestatus(@RequestBody LeaveModel lm){
+        return (List<Map<String, String>>) leaveDao.status(lm.getEmpid());
+    }
+
+
 
     @CrossOrigin(origins = "*")
     @GetMapping("/leaverequests")
