@@ -47,16 +47,16 @@ public List<AdminModel> viewemp()
     @PostMapping(path = "/update",consumes = "application/json",produces = "application/json")
     public String employeeupdate(@RequestBody AdminModel emp)
     {
-       dao.update(emp.getAddress(),emp.getDob(),emp.getEmail(),emp.getEmpid(),emp.getJod(),emp.getName(),emp.getNumber(),emp.getPassword(),emp.getUsername(),emp.getId());
+       dao.update(emp.getAddress(),emp.getDob(),emp.getEmail(),emp.getJod(),emp.getName(),emp.getNumber(),emp.getPassword(),emp.getUsername(),emp.getEmpid());
         return "{status:success}";
     }
 
     @CrossOrigin("*")
     @PostMapping(path = "/loginemployee",consumes = "application/json",produces = "application/json")
-    public String employelogin(@RequestBody AdminModel emp)
+    public List<AdminModel> employelogin(@RequestBody AdminModel emp)
     {
-dao.login(emp.getUsername(),emp.getPassword());
-       return "{status:success}";
+
+       return (List<AdminModel>) dao.login(emp.getUsername(),emp.getPassword());
     }
 
 }

@@ -22,11 +22,11 @@ public interface AdminDao extends CrudRepository<AdminModel,Integer> {
 
 
     @Modifying
-    @Query(value = "UPDATE `employee` SET `address`= :address,`dob`= :dob,`email`= :email,`empid`= :empid,`jod`= :jod,`name`= :name,`number`= :number,`password`= :password,`username`= :username WHERE `id`= :id",nativeQuery = true)
-    void update(String address,String dob,String email,Integer empid,String jod,String name,Integer number,String password,String username,Integer id);
+    @Query(value = "UPDATE `employee` SET `address`= :address,`dob`= :dob,`email`= :email,`jod`= :jod,`name`= :name,`number`= :number,`password`= :password,`username`= :username WHERE `empid`= :empid",nativeQuery = true)
+    void update(String address,String dob,String email,String jod,String name,Integer number,String password,String username,Integer empid);
 
     @Query(value = "SELECT * FROM `employee` WHERE `username`=:username AND `password`=:password",nativeQuery = true)
-    void login(String username, String password);
+    List<AdminModel> login(String username, String password);
 
 
 }
